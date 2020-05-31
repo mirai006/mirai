@@ -1,0 +1,113 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources: 
+
+  miraiSGPAPP10201:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 0.0.0.0/0
+      Description: "102 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10301:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 443
+      ToPort: 443
+      CidrIp: 0.0.0.0/0
+      Description: "103 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10001:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 39.110.201.243/32
+      Description: "100 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10002:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 202.233.46.58/32
+      Description: "100 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10003:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 122.216.200.130/32
+      Description: "100 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10004:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 113.43.214.178/32
+      Description: "100 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP10101:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 219.196.206.40/32
+      Description: "101 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP20001:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 39.110.201.243/32
+      Description: "200 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP20002:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 202.233.46.58/32
+      Description: "200 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP20003:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 122.216.200.130/32
+      Description: "200 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP20004:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 113.43.214.178/32
+      Description: "200 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+  miraiSGPAPP20101:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !ImportValue mirai-SGP-APP
+      IpProtocol: TCP
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 219.196.206.40/32
+      Description: "201 : Rule Number /100 on ACL Sheet of the AWSNetworkCreator200531_182354.xlsm"
+

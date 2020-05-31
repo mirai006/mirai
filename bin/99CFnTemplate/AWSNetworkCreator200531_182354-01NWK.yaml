@@ -1,0 +1,295 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources: 
+
+  miraiVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/20
+      EnableDnsSupport: true
+      EnableDnsHostnames: false
+      InstanceTenancy: default
+      Tags: 
+      - Key: Name
+        Value: mirai-VPC
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000000:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.0/27
+      AvailabilityZone: us-east-1a
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-000
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000032:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.32/27
+      AvailabilityZone: us-east-1b
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-032
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000064:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.64/27
+      AvailabilityZone: us-east-1c
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-064
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000096:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.96/27
+      AvailabilityZone: us-east-1d
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-096
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000128:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.128/27
+      AvailabilityZone: us-east-1e
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-128
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSUBAPP000160:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref miraiVPC
+      CidrBlock: 10.0.0.160/27
+      AvailabilityZone: us-east-1f
+      Tags: 
+      - Key: Name
+        Value: mirai-SUB-APP-000-160
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiACLAPP:
+    Type: AWS::EC2::NetworkAcl
+    Properties:
+      VpcId: !Ref miraiVPC
+      Tags: 
+      - Key: Name
+        Value: mirai-ACL-APP
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiSGPAPP:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group for APP
+      SecurityGroupEgress:
+      - CidrIp: 127.0.0.1/32
+        IpProtocol: -1
+      VpcId: !Ref miraiVPC
+      Tags: 
+      - Key: Name
+        Value: mirai-SGP-APP
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiACLAPP000000:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000000
+      NetworkAclId: !Ref miraiACLAPP
+  miraiACLAPP000032:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000032
+      NetworkAclId: !Ref miraiACLAPP
+  miraiACLAPP000064:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000064
+      NetworkAclId: !Ref miraiACLAPP
+  miraiACLAPP000096:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000096
+      NetworkAclId: !Ref miraiACLAPP
+  miraiACLAPP000128:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000128
+      NetworkAclId: !Ref miraiACLAPP
+  miraiACLAPP000160:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000160
+      NetworkAclId: !Ref miraiACLAPP
+  miraiIGW:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags: 
+      - Key: Name
+        Value: mirai-IGW
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiIGWVPC:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref miraiVPC
+      InternetGatewayId: !Ref miraiIGW
+  miraiRTBIGW:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref miraiVPC
+      Tags: 
+      - Key: Name
+        Value: mirai-RTB-IGW
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiRTBlocal:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref miraiVPC
+      Tags: 
+      - Key: Name
+        Value: mirai-RTB-local
+      - Key: ToolVersion
+        Value: AWSNetworkCreator 1.4.2
+      - Key: ToolCopyright
+        Value: Maksakazu Kayano
+      - Key: SettingInformation(FileName)
+        Value: AWSNetworkCreator200531_182354.xlsm
+  miraiRTBAPP000000:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000000
+      RouteTableId: !Ref miraiRTBIGW
+  miraiRTBAPP000032:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000032
+      RouteTableId: !Ref miraiRTBIGW
+  miraiRTBAPP000064:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000064
+      RouteTableId: !Ref miraiRTBIGW
+  miraiRTBAPP000096:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000096
+      RouteTableId: !Ref miraiRTBIGW
+  miraiRTBAPP000128:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000128
+      RouteTableId: !Ref miraiRTBIGW
+  miraiRTBAPP000160:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref miraiSUBAPP000160
+      RouteTableId: !Ref miraiRTBIGW
+
+Outputs: 
+
+  ExportmiraiVPC:
+    Value: !Ref miraiVPC
+    Export:
+      Name: mirai-VPC
+  ExportmiraiSUBAPP000000:
+    Value: !Ref miraiSUBAPP000000
+    Export:
+      Name: mirai-SUB-APP-000-000
+  ExportmiraiSUBAPP000032:
+    Value: !Ref miraiSUBAPP000032
+    Export:
+      Name: mirai-SUB-APP-000-032
+  ExportmiraiSUBAPP000064:
+    Value: !Ref miraiSUBAPP000064
+    Export:
+      Name: mirai-SUB-APP-000-064
+  ExportmiraiSUBAPP000096:
+    Value: !Ref miraiSUBAPP000096
+    Export:
+      Name: mirai-SUB-APP-000-096
+  ExportmiraiSUBAPP000128:
+    Value: !Ref miraiSUBAPP000128
+    Export:
+      Name: mirai-SUB-APP-000-128
+  ExportmiraiSUBAPP000160:
+    Value: !Ref miraiSUBAPP000160
+    Export:
+      Name: mirai-SUB-APP-000-160
+  ExportmiraiACLAPP:
+    Value: !Ref miraiACLAPP
+    Export:
+      Name: mirai-ACL-APP
+  ExportmiraiSGPAPP:
+    Value: !Ref miraiSGPAPP
+    Export:
+      Name: mirai-SGP-APP
+  ExportmiraiIGW:
+    Value: !Ref miraiIGW
+    Export:
+      Name: mirai-IGW
+  ExportmiraiRTBIGW:
+    Value: !Ref miraiRTBIGW
+    Export:
+      Name: mirai-RTB-IGW
+  ExportmiraiRTBlocal:
+    Value: !Ref miraiRTBlocal
+    Export:
+      Name: mirai-RTB-local
+

@@ -1,0 +1,365 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources: 
+
+  miraiACLAPP10201E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10201
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 0.0.0.0/0
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10201I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10201
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10301E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10301
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 0.0.0.0/0
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 443
+        To: 443
+  miraiACLAPP10301I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10301
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10001I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10001
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 39.110.201.243/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10001E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10001
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 39.110.201.243/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10002I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10002
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 202.233.46.58/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10002E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10002
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 202.233.46.58/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10003I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10003
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 122.216.200.130/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10003E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10003
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 122.216.200.130/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10004I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10004
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 113.43.214.178/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10004E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10004
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 113.43.214.178/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP10101I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10101
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 219.196.206.40/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 80
+        To: 80
+  miraiACLAPP10101E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 10101
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 219.196.206.40/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP20001I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20001
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 39.110.201.243/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 22
+        To: 22
+  miraiACLAPP20001E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20001
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 39.110.201.243/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP20002I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20002
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 202.233.46.58/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 22
+        To: 22
+  miraiACLAPP20002E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20002
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 202.233.46.58/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP20003I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20003
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 122.216.200.130/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 22
+        To: 22
+  miraiACLAPP20003E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20003
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 122.216.200.130/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP20004I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20004
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 113.43.214.178/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 22
+        To: 22
+  miraiACLAPP20004E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20004
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 113.43.214.178/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+  miraiACLAPP20101I:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20101
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 219.196.206.40/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 22
+        To: 22
+  miraiACLAPP20101E:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !ImportValue mirai-ACL-APP
+      RuleNumber: 20101
+      Protocol: 6
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 219.196.206.40/32
+      Icmp:
+        Code: -1
+        Type: -1
+      PortRange:
+        From: 0
+        To: 65535
+

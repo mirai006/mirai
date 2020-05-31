@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources: 
+
+  miraiRTBIGWmiraiIGW:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !ImportValue mirai-RTB-IGW
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !ImportValue mirai-IGW
+
