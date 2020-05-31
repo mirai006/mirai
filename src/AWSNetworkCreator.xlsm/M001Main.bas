@@ -3,8 +3,6 @@ Option Explicit
 
 Public Sub main()
 
-    MsgBox "test"
-
     Dim CloudFormationConfigs As String
     Dim DateTime As String
     
