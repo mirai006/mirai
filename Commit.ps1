@@ -2,16 +2,16 @@
 
 $DateTime = (Get-Date -Format "yyyy/MM/dd HH:mm") + " (JST)"
 
-echo "cscript vbac.wsf decombine`n"
+echo "`ncscript vbac.wsf decombine`n"
 cscript vbac.wsf decombine
 
-echo "git add`n"
+echo "`ngit add`n"
 git add .
 
-echo "git commit`n"
+echo "`ngit commit`n"
 git commit -m "$args Commited at $DateTime"
 
-echo "git push master`n"
+echo "`ngit push master`n"
 git push origin master
-echo "git push origin`n"
+echo "`ngit push origin`n"
 git push origin
