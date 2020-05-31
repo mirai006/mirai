@@ -1,7 +1,8 @@
 
 Param($Reson)
-
 $DateTime = (Get-Date -Format "yyyy/MM/dd HH:mm") + " (JST)"
+
+cscript vbac.wsf decombine
 
 git add .
 
