@@ -1,0 +1,51 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "Sheet4"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+    If Target.Address = "$D$6" Then
+           
+        Application.ScreenUpdating = False
+           
+        Dim intWriteRow As Integer
+        intWriteRow = 20
+    
+        Dim intReadRow As Integer
+        intReadRow = 5
+        
+        For i = intWriteRow To intWriteRow + 8
+        
+            Sheets("VPC").Cells(i, 3).Value = ""
+            Sheets("VPC").Cells(i, 4).Value = ""
+        
+        Next
+        
+       
+        Do While Sheets("Info-VPC").Cells(intReadRow, 6).Value <> ""
+        
+            If Sheets("VPC").Cells(6, 4).Value = Sheets("Info-VPC").Cells(intReadRow, 6).Value Then
+        
+                Sheets("VPC").Cells(intWriteRow, 3).Value = Sheets("Info-VPC").Cells(intReadRow, 8).Value
+                Sheets("VPC").Cells(intWriteRow, 4).Value = "O"
+            
+                intWriteRow = intWriteRow + 1
+        
+        
+            End If
+        
+        intReadRow = intReadRow + 1
+        
+        Loop
+        
+        Application.ScreenUpdating = True
+    
+    End If
+
+End Sub
+
